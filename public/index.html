@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Web site created using create-react-app for Geek Trust Challenge" />
+  <style>
+    html {
+      background: #1f2227;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+    }
+
+    .spinner {
+      width: 150px;
+      height: 150px;
+      position: relative;
+      margin: 100px auto 21px;
+    }
+
+    .double-bounce1,
+    .double-bounce2 {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: #87a3ad;
+      opacity: 0.9;
+      position: absolute;
+      -webkit-animation: planetFound 2.0s infinite ease-in-out;
+      animation: planetFound 2.0s infinite ease-in-out;
+    }
+
+    .double-bounce2 {
+      -webkit-animation-delay: -1.0s;
+      animation-delay: -1.0s;
+    }
+
+    @-webkit-keyframes planetFound {
+
+      0%,
+      100% {
+        -webkit-transform: scale(0.0)
+      }
+
+      50% {
+        -webkit-transform: scale(1.0)
+      }
+    }
+
+    @keyframes planetFound {
+
+      0%,
+      100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+      }
+
+      50% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+      }
+    }
+
+    .spinnerText {
+      text-align: center;
+      color: #1c6ec1;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+      font-size: 7vmin;
+    }
+
+    .spinnerText:after {
+      content: '.';
+      animation: dots 1s steps(5, end) infinite;
+      -webkit-animation: dots 1s steps(5, end) infinite;
+      font-size: 10vmin;
+    }
+
+    @keyframes dots {
+
+      0%,
+      20% {
+        color: rgba(155, 136, 136, 0);
+        text-shadow: .25em 0 0 rgba(0, 0, 0, 0), .5em 0 0 rgba(0, 0, 0, 0);
+      }
+
+      40% {
+        color: #1c6ec1;
+        text-shadow: .25em 0 0 rgba(0, 0, 0, 0), .5em 0 0 rgba(0, 0, 0, 0);
+      }
+
+      60% {
+        text-shadow: .25em 0 0 #1c6ec1, .5em 0 0 rgba(0, 0, 0, 0);
+      }
+
+      80%,
+      100% {
+        text-shadow: .25em 0 0 #1c6ec1, .5em 0 0 #1c6ec1;
+      }
+    }
+
+    @-webkit-keyframes dots {
+
+      0%,
+      20% {
+        color: rgba(155, 136, 136, 0);
+        text-shadow: .25em 0 0 rgba(0, 0, 0, 0), .5em 0 0 rgba(0, 0, 0, 0);
+      }
+
+      40% {
+        color: #1c6ec1;
+        text-shadow: .25em 0 0 rgba(0, 0, 0, 0), .5em 0 0 rgba(0, 0, 0, 0);
+      }
+
+      60% {
+        text-shadow: .25em 0 0 #1c6ec1, .5em 0 0 rgba(0, 0, 0, 0);
+      }
+
+      80%,
+      100% {
+        text-shadow: .25em 0 0 #1c6ec1, .5em 0 0 #1c6ec1;
+      }
+    }
+  </style>
+  <title>Finding Falcone</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <canvas id="myCanvas">
+    Your browser does not support the canvas element.
+  </canvas>
+  <div id="root">
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+    </div>
+    <div class="spinnerText">
+      Loading Planet
+    </div>
+  </div>
+  <script>
+    function drawSmallCirclesWithDifferentColor() {
+      let canvas = document.getElementById("myCanvas");
+      context = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      var numCircles = window.innerWidth / 2;
+      var maxRadius = 1;
+      var minRadius = 0.5;
+      var colors = ["aqua", "black", "blue", "fuchsia",
+        "green", "cyan", "lime", "maroon",
+        "navy", "olive", "purple", "red",
+        "silver", "teal", "yellow", "azure",
+        "gold", "bisque", "pink", "orange"];
+      var numColors = colors.length;
+
+      for (var n = 0; n < numCircles; n++) {
+        var xPos = Math.random() * canvas.width;
+        var yPos = Math.random() * canvas.height;
+        var radius = minRadius + (Math.random() * (maxRadius - minRadius));
+        var colorIndex = Math.random() * (numColors - 1);
+        colorIndex = Math.round(colorIndex);
+        var color = colors[colorIndex];
+        drawsmallPlanets(context, xPos, yPos, radius, color);
+      }
+    }
+
+    function drawsmallPlanets(context, xPos, yPos, radius, color) {
+      var startAngle = (Math.PI / 180) * 0;
+      var endAngle = (Math.PI / 180) * 360;
+      context.beginPath();
+      context.arc(xPos, yPos, radius, startAngle, endAngle, false);
+      context.globalAlpha = 0.35;
+      context.fillStyle = color;
+      context.fill();
+      context.closePath();
+    }
+
+    drawSmallCirclesWithDifferentColor();
+    window.addEventListener("resize", function () {
+      drawSmallCirclesWithDifferentColor();
+    });
+  </script>
+</body>
+
+</html>

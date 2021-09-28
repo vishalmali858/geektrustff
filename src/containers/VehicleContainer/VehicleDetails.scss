@@ -1,0 +1,79 @@
+.vehicleDetails {
+	
+	&.loading {
+		.ant-space-item {
+			width: 250px;
+		}
+	}
+
+	.ant-skeleton {
+		display: flex;
+		flex-direction: column;
+		background: #141414;
+		border-top-right-radius: 36px;
+    	border-top-left-radius: 36px;
+
+		.ant-skeleton-header {
+			padding: 20px;
+			border-bottom: 1px solid grey;
+		}
+
+		.ant-skeleton-content {
+			padding: 20px;
+		}
+	}
+
+	.ant-skeleton-header {
+		padding: 0px;
+	}
+
+	.ant-skeleton-title {
+    	margin: 30px auto !important;
+	}
+
+	.ant-space {
+		padding: 20px;
+	}
+
+	.vehiclesInnerDetails {
+		.ant-card {
+			border-radius: 0px !important;
+
+			&-meta-detail {
+				.ant-space {
+					padding-top: 35px;
+				}
+			}
+		}
+
+		.ant-card-body {
+			padding: 12px !important
+		}
+	}
+
+	.ant-card {
+		border-top-right-radius: 36px;
+    	border-top-left-radius: 36px;
+	}
+
+	.ant-card-body {
+		padding: 12px 0px 0px 0px !important;
+	}
+
+	.ant-avatar-square {
+		border-top-right-radius: 36px;
+    	border-top-left-radius: 36px;
+		display: inline-flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-top: 20%;
+
+		.anticon.spaceShuttleIcon {
+			padding-left: 18px;
+		}
+
+		.anticon.spaceShipIcon {
+			padding-left: 15px;
+		}
+	}
+}

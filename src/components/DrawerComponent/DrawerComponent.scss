@@ -1,0 +1,58 @@
+.ant-drawer-body > .ant-space.ant-space-vertical {
+    width: 100%;
+}
+
+.ant-drawer-title .ant-space-item .ant-typography{
+    margin: 0px;
+}
+
+.ant-drawer .ant-card {
+    background-color: var(--headerOverlayColor) !important;
+}
+
+.ant-drawer-close .anticon-dingtalk-circle {
+    color: #1c6ec1;
+}
+
+.ant-drawer-content {
+    background-color: var(--headerOverlayColor) !important; 
+}
+
+.ant-list-item-meta.vehicleName {
+    padding-right: 8px;
+
+    .ant-list-item-meta-description .ant-space {
+        padding-top: 30px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .ant-divider-inner-text {
+      padding: 0px !important;
+    }
+}
+
+.ant-drawer-title {
+    width: 90%;
+}
+
+button.ant-drawer-close {
+    padding: 10px !important;
+}
+
+@media screen and (max-width: 388px) {
+    button.ant-drawer-close {
+      padding: 20px !important;
+    }
+}
+  
+@media screen and (max-width: 500px) {
+    .ant-list-item-meta-content {
+        padding: 0px !important;
+    }
+
+    .ant-list-item-meta-description > .ant-space.ant-space-horizontal.ant-space-align-start {
+        flex-direction: column;
+        align-items: center;
+    }
+}

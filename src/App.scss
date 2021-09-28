@@ -1,0 +1,80 @@
+:root {
+  --textColor :#e2d0ad;
+  --bodyBackgroundColor: #1f2227;
+  --headerOverlayColor: #141414;
+  --footerOverlayColor: #141414;
+  --bodyOverlayColor: #00000033;
+}
+
+.App {
+  text-align: center;
+}
+
+body {
+  background-color: transparent !important;
+}
+
+header.ant-layout-header {
+  background: var(--headerOverlayColor);
+  box-shadow: 0 0 5px rgb(26 29 33 / 0%);
+  height: 75px;
+  padding: 0px 0px 0px 20px;
+  position: fixed;
+  z-index: 1; 
+  width: 100%;
+}
+
+footer.ant-layout-footer {
+  background: var(--footerOverlayColor);
+  box-shadow: 0 0 5px rgb(26 29 33 / 0%);
+  height: 65px;
+  z-index: 1; 
+  width: 100%;
+  padding: 10px;
+
+  .footerComponent > .ant-space.ant-space-horizontal {
+    width: 100%;
+    justify-content: space-between;
+
+    .ant-space.ant-space-vertical {
+      text-align: left;
+    }
+  }
+}
+
+main.ant-layout {
+  &-content {
+    margin-top: 80px;
+    min-height: calc(100vh - 145px);
+  }
+}
+
+.ant-typography {
+  margin-bottom: 0px !important;
+}
+
+.appMainContainer {
+  .mainDashboardContainer {
+    width: 100%;
+    padding: 10px 20px 20px 20px;
+
+    > .ant-space {
+      background: var(--bodyBackgroundColor);
+    }
+  }
+
+  .ant-layout {
+    background-color: transparent;
+    color: var(--textColor);
+  }
+}
+
+img.ant-image-img.logoHeader {
+  cursor: pointer;
+}
+
+.lineBelowText {
+  content: "";
+  height: 3px;
+  background: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%);
+}

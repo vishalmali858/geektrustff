@@ -1,0 +1,19 @@
+.mainDashboardContainer {
+    .cardComponent {
+        padding-top: 10px;
+
+        .ant-card {
+            background: var(--bodyOverlayColor);
+            border: 0px !important;
+            color: var(--textColor);
+
+            &-hoverable {
+                cursor: default;
+            }
+
+            &-head-title {
+                color: var(--textColor);
+            }
+        }
+    }
+}

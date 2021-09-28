@@ -1,0 +1,22 @@
+.radioComponent {
+	text-align: left;
+}
+
+.radioSpaceVehicle {
+    color: var(--textColor);
+    .ant-image {
+    	float: right;
+    }
+}
+
+.ant-radio {
+    &.ant-radio-checked {
+        .ant-radio-inner {
+            border-color: #e2d0ad !important;
+
+            &:after {
+                background-color: #e2d0ad;
+            }
+        }
+    }
+ }

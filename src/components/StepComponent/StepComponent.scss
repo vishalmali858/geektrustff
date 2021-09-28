@@ -1,0 +1,12 @@
+.sideBarContainer {
+    padding: 20px 40px 20px 20px;
+    background-color: var(--bodyOverlayColor);
+}
+
+.ant-steps-item-title, .ant-steps-item-description, .ant-steps-item-subtitle {
+    color: var(--textColor) !important;
+}
+
+.ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-tail::after {
+    background-color: var(--textColor) !important;
+}

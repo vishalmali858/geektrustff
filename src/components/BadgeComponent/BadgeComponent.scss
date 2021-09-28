@@ -1,0 +1,59 @@
+.ant-ribbon.ant-ribbon-placement-start {
+    
+    &.planetIcon {
+        left: 0px;
+        top: 5px;
+
+        .ant-ribbon-corner {
+            border: 0 none;
+        }
+    }
+}
+
+.ant-ribbon.ant-ribbon-placement-end {
+    &.vehicleIcon {
+        right: 0px;
+        top: 5px;
+
+        .ant-ribbon-corner {
+            border: 0 none;
+        }
+    }   
+}
+
+.timerCounter {
+    .ant-scroll-number.ant-badge-count {
+        background-color: transparent;
+        color: #e2d0ad;
+        font-weight: 600;
+        font-size: 24px;
+        height: 100%;
+        line-height: 1.35;
+        box-shadow: none;
+    }
+}
+
+.timerBackTopCounter {
+    .ant-scroll-number.ant-badge-count {
+        background-color:#141414;
+        color: #e2d0ad;
+        font-weight: 600;
+        font-size: 20px;
+        height: 100%;
+        line-height: 1.35;
+        box-shadow: 0 0 0 1px;
+        display: none;
+    }
+}
+
+.ant-radio-group .ant-badge-count {
+    z-index: auto !important;
+}
+
+@media screen and (max-width: 767px) {
+    .timerBackTopCounter {
+        .ant-scroll-number.ant-badge-count {
+            display: inline-block;
+        }
+    }
+}

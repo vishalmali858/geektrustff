@@ -1,0 +1,19 @@
+.ant-btn.selectedButton {
+    border-color: #165996;
+}
+
+.ant-btn:hover, .ant-btn:focus {
+    color: var(--textColor) !important;
+}
+
+.ant-btn[disabled], 
+.ant-btn[disabled]:hover, 
+.ant-btn[disabled]:focus, 
+.ant-btn[disabled]:active {
+  background: 0 0 !important;
+  color: #6d6d6d !important;
+}
+
+.ant-space.dashboardButtonContainer {
+    padding-top: 30px;
+}

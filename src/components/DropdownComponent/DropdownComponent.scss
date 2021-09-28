@@ -1,0 +1,21 @@
+.dropdownPlanet {
+	display: flex;
+    flex-direction: column;
+
+    .ant-image {
+    	float: right;
+    }
+
+    div.ant-space {
+        justify-content: space-between;
+        color: var(--textColor);
+    }
+}
+
+.ant-select-selection-item {
+    color: var(--textColor);
+}
+
+.ant-select-dropdown {
+    z-index: auto !important;
+}

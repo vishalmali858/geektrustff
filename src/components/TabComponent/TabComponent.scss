@@ -1,0 +1,21 @@
+.logo-header {
+    
+    > .navigatorIconHeader {
+      float: left;
+    }
+
+    .ant-menu-overflow {
+            justify-content: flex-end;
+            background: transparent;
+            border-bottom: 0px !important;
+            padding-top: 8px;
+    }
+
+    > ul > .ant-menu-overflow-item {
+      padding-right: 10px;
+
+      &:after {
+        border-bottom: 0px !important
+      }
+    }
+}
